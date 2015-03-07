@@ -11,6 +11,8 @@ class Person {
 	Gender gender = Gender.M
 	Date birthDate
 	Organization worksFor
+	String mediaPath
+	String bio
 	
 	static hasMany = [assignments : Assignment]
 
@@ -20,6 +22,8 @@ class Person {
 		gender nullable: true
 		birthDate nullable: true
 		worksFor nullable: false
+		mediaPath nullable: true
+		bio nullable: true, maxSize: 5000
     }
 	
 	String toString() { name }

@@ -8,17 +8,20 @@ class SpaceshipClass {
 	
 	String name
 	Organization operatedBy
+	String mediaPath
 	
 	// dimensions
 	Double length
 	Double width
 	Double height 
+	
 
     static constraints = {
 		name blank: false, unique: true
 		length nullable: true
 		width nullable: true
 		height nullable: true
+		mediaPath nullable: true
     }
 	
 	String toString() { name }

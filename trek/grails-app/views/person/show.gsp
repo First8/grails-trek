@@ -16,11 +16,14 @@
 	<div class="col-sm-8">
 
 		<div class="page-header">
-			<h1>${personInstance.name}</h1>
+			<h1>${personInstance.name} <small>${personInstance.rank}</small></h1>
 		</div>
-		<p class="lead">
-			<person:intro />
-		</p>
+		
+		<g:if test="${personInstance.bio}">
+			<p class="lead" style="text-transform: none">
+				${personInstance.bio}
+			</p>
+		</g:if>
 		
 		<div class="page-header">
 			<h2>Assignments</h2>
@@ -35,36 +38,60 @@
 	
 	<div class="col-sm-4">
 	
-		<asset:image class="img-thumbnail" src="trek/${personInstance.name}.jpg" alt="${personInstance.name}"/>
+		<g:if test="${personInstance.mediaPath}">
+			<asset:image class="img-responsive img-thumbnail" src="trek/${personInstance.mediaPath}" alt="${personInstance.name}"/>
+		</g:if>
+		<g:else>
+			<img class="img-responsive img-thumbnail" data-src="holder.js/200x200" alt="Alas, no photo for $personInstance.name" />
+		</g:else>
 		
 		<table class="table">
 			<tbody>
 			
-				<tr class="prop">
-					<td valign="top" class="name"><g:message code="person.name.label" default="Name" /></td>
+				<tr>
+					<td><g:message code="person.name.label" default="Name" /></td>
 					
-					<td valign="top" class="value">${fieldValue(bean: personInstance, field: "name")}</td>
-					
-				</tr>
-			
-				<tr class="prop">
-					<td valign="top" class="name"><g:message code="person.rank.label" default="Rank" /></td>
-					
-					<td valign="top" class="value">${fieldValue(bean: personInstance, field: "rank")}</td>
+					<td>${fieldValue(bean: personInstance, field: "name")}</td>
 					
 				</tr>
 			
-				<tr class="prop">
-					<td valign="top" class="name"><g:message code="person.gender.label" default="Gender" /></td>
+				<tr>
+					<td><g:message code="person.gender.label" default="Gender" /></td>
 					
-					<td valign="top" class="value">${personInstance?.gender?.encodeAsHTML()}</td>
+					<td>${personInstance?.gender?.encodeAsHTML()}</td>
+					
+				</tr>
+				
+				<tr>
+					<td><g:message code="person.rank.label" default="Rank" /></td>
+					
+					<td>${fieldValue(bean: personInstance, field: "rank")}</td>
+					
+				</tr>
+				
+				<tr>
+					<td><g:message code="person.affiliation.label" default="Affiliation" /></td>
+					
+					<td>
+						<g:link controller="organization" action="show" id="${personInstance.worksFor.id}">
+							${fieldValue(bean: personInstance, field: "worksFor")}
+						</g:link>
+					</td>
+				
+				</tr>
+				
+				<tr>
+					<td><g:message code="person.occupation.label" default="Occupation" /></td>
+					
+					<td><person:mostRecentAssignment person="${personInstance}" /></td>
 					
 				</tr>
 			
-				<tr class="prop">
-					<td valign="top" class="name"><g:message code="person.birthDate.label" default="Birth Date" /></td>
+			
+				<tr>
+					<td><g:message code="person.birthDate.label" default="Birth Date" /></td>
 					
-					<td valign="top" class="value"><g:formatDate date="${personInstance?.birthDate}" format="MM-dd-yyyy" /></td>
+					<td><g:formatDate date="${personInstance?.birthDate}" format="MM-dd-yyyy" /></td>
 					
 				</tr>
 						

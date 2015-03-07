@@ -10,16 +10,7 @@ class PersonsTagLib {
 	def createLinkToSpaceship(Spaceship spaceship) {
 		g.link(controller: "spaceship", action: "show", id: spaceship.id) { spaceship.encodeAsHTML() }
 	}
-	
-	def intro = { attrs ->
 		
-		out << "Jean-Luc Picard was a celebrated Starfleet officer, archaeologist and diplomat who served during "
-		out << "the latter two thirds of the 24th century. The highlights of his career were centered around assignments as "
-		out << "commanding officer of "
-		out << "the Federation starships: USS Stargazer, USS Enterprise-D, and the USS Enterprise-E."
-		
-	}
-	
 	def mostRecentAssignment = { attrs ->
 		if (!attrs.person) {
 			throwTagError('Tag ["mostRecentAssignment"] missing required attribute ["person"]')
