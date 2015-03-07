@@ -11,3 +11,11 @@
 *= require ../dist/lcars/theme.css
 *= require_self
 */
+
+body {
+	padding-top: 100px;
+}
+
+.margin-top-medium {
+	margin-top: 20px;
+}
