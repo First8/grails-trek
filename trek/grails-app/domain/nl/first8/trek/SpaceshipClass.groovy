@@ -2,7 +2,9 @@ package nl.first8.trek
 
 /**
  * The classification of a spaceship.
- * @see http://memory-beta.wikia.com/wiki/Federation_starship_classes
+ * 
+ * @see <a href="http://memory-beta.wikia.com/wiki/Federation_starship_classes">Federation starship classes</a>
+ * <img src="http://vignette3.wikia.nocookie.net/startrek/images/f/fd/Babcock_class_schematic.jpg/revision/latest?cb=20150309040620" width="300" />
  */
 class SpaceshipClass {
 	
