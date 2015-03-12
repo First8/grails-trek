@@ -10,6 +10,47 @@ class PersonsTagLib {
 	def createLinkToSpaceship(Spaceship spaceship) {
 		g.link(controller: "spaceship", action: "show", id: spaceship.id) { spaceship.encodeAsHTML() }
 	}
+	
+	/**
+	 * Displays the biography of given person. 
+	 * Outputs the first line of the biography in a separate lead-paragraph, apart from the other lines.
+	 * 
+	 * e.g. &lt;person:bio person="${person}" /&gt;
+	 * 
+	 * @emptyTag
+	 * 
+	 * @attr person REQUIRED The person
+	 * 
+	 */
+	def bio = { attrs ->
+		if (!attrs.person) {
+			throwTagError('Tag ["bio"] missing required attribute ["person"]')
+		}
+		
+		def p = attrs.remove('person')
+		if (p.bio) {
+
+			// split the bio by period			
+			def lines = p.bio.split('\\.') // split regex for period (".")
+			
+			// find me the lead line
+			def lead = lines ? lines.head() + "." : p.bio
+			
+			// try to join the remainder again
+			def rest = lines ? lines.tail().join(".") : ""
+			
+			out << "<p class=\"lead\">"
+			out << lead
+			out << "</p>"
+			
+			if (rest) {
+				rest += "."
+				out << "<p>"
+				out << rest.trim()
+				out << "</p>"
+			}
+		}
+	}
 		
 	def mostRecentAssignment = { attrs ->
 		if (!attrs.person) {
@@ -17,8 +58,9 @@ class PersonsTagLib {
 		}
 		
 		def p = attrs.remove('person')
-		def a = p.assignments.sort { it.yearFrom }.last()
-		if (a) {
+		def sortedAssignments = p.assignments.sort { it.yearFrom }
+		if (sortedAssignments) {
+			def a = sortedAssignments.last()
 			out << a.occupation.encodeAsHTML()
 			out << " on the "
 			out << createLinkToSpaceship(a.spaceship)

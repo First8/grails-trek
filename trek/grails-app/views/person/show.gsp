@@ -19,11 +19,7 @@
 			<h1>${personInstance.name} <small>${personInstance.rank}</small></h1>
 		</div>
 		
-		<g:if test="${personInstance.bio}">
-			<p class="lead" style="text-transform: none">
-				${personInstance.bio}
-			</p>
-		</g:if>
+		<person:bio person="${personInstance}" />
 		
 		<div class="page-header">
 			<h2>Assignments</h2>

@@ -9,12 +9,23 @@ import spock.lang.Specification
 @TestFor(PersonsTagLib)
 class PersonsTagLibSpec extends Specification {
 
-    def setup() {
-    }
+	def setup() {
+	}
 
-    def cleanup() {
-    }
+	def cleanup() {
+	}
 
-    void "test something"() {
-    }
+	void "test bio tag"() {
+
+		given:
+		String tag = '<person:bio person="${p}" />'
+
+		expect:
+		applyTemplate(tag, [p: new Person(bio: "")]) == ''
+		applyTemplate(tag, [p: new Person(bio: "Deanna Troi is")]) == '<p class="lead">Deanna Troi is.</p>'
+		applyTemplate(tag, [p: new Person(bio: "Deanna Troi is.")]) == '<p class="lead">Deanna Troi is.</p>'
+		applyTemplate(tag, [p: new Person(bio: "Deanna Troi is. She served as counselor.")]) == '<p class="lead">Deanna Troi is.</p><p>She served as counselor.</p>'
+		applyTemplate(tag, [p: new Person(bio: "Deanna Troi is. She served as counselor. Third line.")]) == '<p class="lead">Deanna Troi is.</p><p>She served as counselor. Third line.</p>'
+
+	}
 }
