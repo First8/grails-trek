@@ -24,6 +24,9 @@ body {
 	margin-bottom: 20px;
 }
 
-.dropdown > .dropdown-menu {
-	
+.table > thead {
+	background-color: #2E5B77;
+}
+.table > thead a {
+	color: #86B6E1;
 }

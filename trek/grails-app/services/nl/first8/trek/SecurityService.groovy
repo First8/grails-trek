@@ -40,6 +40,18 @@ class SecurityService {
 	User getUser() {
 		getSession().user
 	}
+	
+	/**
+	 * Get current logged in user, when you want to use User in a query 
+	 * e.g. prevents org.hibernate.LazyInitializationException.
+	 */
+	User loadUser() {
+		if (!isLoggedIn()) {
+			return null
+		}
+		
+		User.get(getUser().id)
+	}
 
 	/**
 	 * Quick check to see if the current user is logged in.

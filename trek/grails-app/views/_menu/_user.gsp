@@ -23,7 +23,7 @@
 
 		<a class="dropdown-toggle" role="button" data-toggle="dropdown" data-target="#" href="#">
 			<i class="glyphicon glyphicon-user icon-white"></i>
-			<sec:username/>
+			Hi there, <sec:username/>
 			<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu" role="menu">

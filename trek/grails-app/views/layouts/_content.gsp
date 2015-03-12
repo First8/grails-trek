@@ -4,10 +4,18 @@
 		<g:render template="/_menu/menubar"/>
 	</g:if>
 	
+	<div class="row">
+		<div class="col-sm-12">
+			<asset:image class="img-responsive" src="trek/dashboard-leader.png" />
+		</div>
+	</div>
+	
 	<!-- Secondary menu in one row (e.g., actions for current controller) -->
 	<g:if test="${!layout_nosecondarymenu}">
 		<g:render template="/_menu/submenubar"/>														
 	</g:if>
+	
+
 	
 	<!-- print system messages (infos, warnings, etc) - not validation errors -->
 	<g:if test="${flash.message && !layout_noflashmessage}">

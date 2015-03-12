@@ -19,13 +19,13 @@ class Person {
 
     static constraints = {
 		name blank: false, unique: true
-		species nullable: true
 		rank nullable: false
 		gender nullable: true
 		birthDate nullable: true
 		worksFor nullable: false
 		mediaPath nullable: true
 		bio nullable: true, maxSize: 5000
+		species nullable: true
     }
 	
 	String toString() { name }

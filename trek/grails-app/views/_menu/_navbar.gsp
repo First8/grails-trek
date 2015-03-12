@@ -10,12 +10,15 @@
 				<span class="icon-bar"></span>
 			</button>
 			
-			<a class="navbar-brand" href="${createLink(uri: '/')}">${meta(name:'app.name')}</a>
+			<a class="navbar-brand" href="${createLink(uri: '/')}">
+				${meta(name:'app.name')}
+				<%--<asset:image src="trek/trek-logo.png" />
+			--%></a>
 		</div>
 		
 		<div class="navbar-collapse navbar-ex1-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>			
+				<li class="active"><a href="${createLink(uri: '/')}">Dashboard</a></li>			
 			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">

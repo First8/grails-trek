@@ -4,11 +4,20 @@ class PersonsTagLib {
 	
 	static namespace = "person"
 	
+	/** Dependency injection for securityService. */
+	def securityService
+	
     static defaultEncodeAs = [taglib:'none']
     static encodeAsForTags = [intro: [taglib:'html']]
 	
 	def createLinkToSpaceship(Spaceship spaceship) {
 		g.link(controller: "spaceship", action: "show", id: spaceship.id) { spaceship.encodeAsHTML() }
+	}
+	
+	def personName = {
+		if (securityService.isLoggedIn()) {
+			out << securityService.user.person.name.encodeAsHTML()
+		}
 	}
 	
 	/**

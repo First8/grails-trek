@@ -5,16 +5,49 @@
 		<title>Starfleet Dashboard</title>
 	</head>
 	<body>
-		
+			
 		<div class="row">
 		
-		<div class="col-sm-8" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-		</div>
+		<div class="col-sm-8">
+			
+			<sec:ifNotLoggedIn>
+			
+				<div class="jumbotron">
+					<h1>Dashboard</h1>
+					<p>
+						Welcome to the LCARS dashboard. Please have a look around. You can view your collegues 
+						or <g:link controller="user" action="login">sign in</g:link>.
+					</p>
+				</div>
+				
+			</sec:ifNotLoggedIn>
+			
+			<sec:ifLoggedIn>
+			
+				<div class="jumbotron">
+			        <h1>Hello, ${currentPerson.name}!</h1>
+			        <p>Welcome back ${currentPerson.rank} ${currentPerson.name}, ready to get to work!</p>
+			        
+			        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+			        
+			        <h2>Collegues</h2>
+					<g:each in="${colleagues}" var="person">
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#">
+									<asset:image class="media-object" style="max-width: 50px" src="trek/${person.mediaPath}" alt="${person.name}"/>
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">${person.name}</h4>
+								${person.rank} / ${person.worksFor}
+							</div>
+						</div>
+					</g:each>
+		        </div>
+	        </sec:ifLoggedIn>
+		        	        
+	      </div>
 	
 		<div class="col-sm-4" role="complementary">
 			<div class="page-header">
