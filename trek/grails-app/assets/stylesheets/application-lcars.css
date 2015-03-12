@@ -23,3 +23,7 @@ body {
 .margin-bottom-medium {
 	margin-bottom: 20px;
 }
+
+.dropdown > .dropdown-menu {
+	
+}

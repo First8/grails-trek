@@ -1,7 +1,7 @@
 <html>
 <head>
-	<title><g:message code="springSecurity.login.title"/></title>
-	<meta name="layout" content="kickstart" />
+	<title><g:message code="security.login.title"/></title>
+	<meta name="layout" content="lcars" />
 
 	<g:set var="layout_nomainmenu"		value="${true}" scope="request"/>
 	<g:set var="layout_nosecondarymenu"	value="${true}" scope="request"/>
@@ -15,25 +15,25 @@
 	<div class="col-md-6">
 		<form role="form" id='loginForm' class='form-horizontal' action='${postUrl}' method='POST' autocomplete='off'>
 				<div class="form-group ${hasErrors(bean: _DemoPageInstance, field: 'name', 'error')} ">
-					<h3> <g:message code="springSecurity.login.header"/> </h3>
+					<h3> <g:message code="security.login.header"/> </h3>
 				</div>
 				
 				<div class="form-group ${hasErrors(bean: _DemoPageInstance, field: 'name', 'error')} ">
-					<label for='username' class="control-label"><g:message code="springSecurity.login.username.label"/>:</label>
+					<label for='username' class="control-label"><g:message code="security.login.username.label"/>:</label>
 					<div class="controls">
 						<input type='text' class='form-control col-md-4' name='j_username' id='username'/>
 					</div>
 				</div>
 	
 				<div class="form-group ${hasErrors(bean: _DemoPageInstance, field: 'name', 'error')} ">
-					<label for='password' class="control-label"><g:message code="springSecurity.login.password.label"/>:</label>
+					<label for='password' class="control-label"><g:message code="security.login.password.label"/>:</label>
 					<div class="controls">
 						<input type='password' class='form-control col-md-4' name='j_password' id='password'/>
 					</div>
 				</div>
 				
 				<div id="remember_me_holder" class="form-group">
-					<label for='remember_me' class="control-label"><g:message code="springSecurity.login.remember.me.label"/></label>
+					<label for='remember_me' class="control-label"><g:message code="security.login.remember.me.label"/></label>
 					<div class="controls">
 						<bs:checkBox class="form-control col-md-4" name="${rememberMeParameter}" value="${hasCookie}" />
 					</div>
