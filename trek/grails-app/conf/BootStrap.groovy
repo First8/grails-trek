@@ -15,7 +15,7 @@ class BootStrap {
 	void loadDefaultContent() {
 		
 		// load database content
-		def fixture = fixtureLoader.load("organizations").load("spaceships").load("persons")
+		def fixture = fixtureLoader.load("universe").load("spaceships").load("persons")
 		assert Person.count() > 0
 		
 	}

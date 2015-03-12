@@ -7,7 +7,8 @@ class Person {
 	}
 		
 	String name
-	String rank
+	Species species
+	Rank rank
 	Gender gender = Gender.M
 	Date birthDate
 	Organization worksFor
@@ -18,6 +19,7 @@ class Person {
 
     static constraints = {
 		name blank: false, unique: true
+		species nullable: true
 		rank nullable: false
 		gender nullable: true
 		birthDate nullable: true

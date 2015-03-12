@@ -58,6 +58,15 @@
 					
 				</tr>
 				
+				<g:if test="${personInstance.species}">
+				<tr>
+					<td><g:message code="person.species.label" default="Species" /></td>
+					
+					<td>${fieldValue(bean: personInstance, field: "species")}</td>
+					
+				</tr>
+				</g:if>
+				
 				<tr>
 					<td><g:message code="person.rank.label" default="Rank" /></td>
 					
