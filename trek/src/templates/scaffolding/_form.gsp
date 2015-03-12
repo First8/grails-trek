@@ -34,9 +34,9 @@ private renderFieldForProperty(p, owningClass, prefix = "") {
 		cp = owningClass.constrainedProperties[p.name]
 		required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable && (cp.propertyType != String || !cp.blank) : false)
 	} %>
-			<div class="\${hasErrors(bean: ${propertyName}, field: '${prefix}${p.name}', 'error')} ${required ? 'required' : ''}">
-				<label for="${prefix}${p.name}" class="control-label"><g:message code="${domainClass.propertyName}.${prefix}${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
-				<div>
+			<div class="form-group \${hasErrors(bean: ${propertyName}, field: '${prefix}${p.name}', 'error')} ${required ? 'required' : ''}">
+				<label for="${prefix}${p.name}" class="col-sm-2 control-label"><g:message code="${domainClass.propertyName}.${prefix}${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
+				<div class="col-sm-10">
 					${renderEditor(p)}
 					<span class="help-inline">\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')}</span>
 				</div>
