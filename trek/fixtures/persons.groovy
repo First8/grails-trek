@@ -56,7 +56,7 @@ fixture {
 		rank = Rank.LIEUTENANT_COMMANDER
 		birthDate = new Date("2340/5/15")
 		worksFor = starfleet
-		bio = '''Worf – son of Mogh, of the Klingon House of Martok, of the Human family Rozhenko; mate to K'Ehleyr, father to Alexander Rozhenko, and husband to Jadzia Dax; Starfleet officer and soldier of the Empire; bane of the House of Duras; slayer of Gowron; Federation ambassador to Qo'noS – was one of the most influential Klingons of the latter half of the 24th century.'''
+		bio = '''Worf - son of Mogh, of the Klingon House of Martok, of the Human family Rozhenko; mate to K'Ehleyr, father to Alexander Rozhenko, and husband to Jadzia Dax; Starfleet officer and soldier of the Empire; bane of the House of Duras; slayer of Gowron; Federation ambassador to Qo'noS - was one of the most influential Klingons of the latter half of the 24th century.'''
 		assignments = [
 			new Assignment(spaceship: enterpriseE, occupation: "Strategic operations officer", yearFrom: 2372),
 		]
