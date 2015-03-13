@@ -23,7 +23,7 @@
 			</sec:ifNotLoggedIn>
 			
 			<%--TODO6: you can also make your own tag libraries.
-			          See SecurityTagLib in taglib (TODO7). --%>
+			          See SecurityTagLib in taglib (to do nr 7). --%>
 			<sec:ifLoggedIn>
 			
 				<div class="jumbotron">
