@@ -7,8 +7,12 @@ class MissionService {
 
     def listPlots(String name) {
 		
-		Mission.all.findAll { Mission it ->
-			println it.missionExcerpt
+		List namedMissions = Mission.list().findAll { Mission it ->
+			it.missionExcerpt.excerpt?.contains(name)
+		}
+		
+		namedMissions.each {
+			log.info "Found ${it}"
 		}
 		
     }

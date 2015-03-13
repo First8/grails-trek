@@ -1,6 +1,8 @@
 import groovy.json.JsonSlurper
+import java.util.concurrent.ThreadFactory
 import nl.first8.trek.*
 import nl.first8.trek.security.User
+import org.springframework.scheduling.concurrent.CustomizableThreadFactory
 
 //TODON  The init closure in the BootStrap class is run at application startup, and could be used to initialize or check some stuff.
 //       We use it to fill the in-memory database with some example data.
@@ -43,7 +45,8 @@ class BootStrap {
 			log.info("There is a user in the database with user name ${it.userName} and password ${it.password}")
 		}
 		
-		java.util.concurrent.Executors.newFixedThreadPool(1).submit {
+		ThreadFactory factory = new CustomizableThreadFactory("missions-loader")
+		java.util.concurrent.Executors.newFixedThreadPool(1, factory).submit {
 			persistenceInterceptor.init()
 			try {
 				log.info "Loading missions in the background ..."

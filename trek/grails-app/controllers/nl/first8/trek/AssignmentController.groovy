@@ -7,7 +7,8 @@ class AssignmentController {
 	
 	def debug() {
 		
-		missionService.listPlots("picard")
+		missionService.listPlots("Qaris")
 		
+		return []
 	}
 }
