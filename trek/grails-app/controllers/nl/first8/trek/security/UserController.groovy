@@ -19,8 +19,9 @@ class UserController {
 			securityService.login(user)
 			redirect controller: 'dashboard', action: 'index'
 		} else {
-			flash.message = "Invalid username and password."
-			render view: 'login'
+			if (params.password || params.userName) {
+				flash.message = "Invalid user name and password."
+			}
 		}
 	}
 	
