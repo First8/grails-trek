@@ -1,5 +1,6 @@
-package nl.first8.trek
+package nl.first8.trek.security
 
+import nl.first8.trek.security.SecurityService;
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

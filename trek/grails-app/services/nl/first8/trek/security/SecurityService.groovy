@@ -1,4 +1,4 @@
-package nl.first8.trek
+package nl.first8.trek.security
 
 import javax.servlet.http.HttpSession
 import nl.first8.trek.security.User
