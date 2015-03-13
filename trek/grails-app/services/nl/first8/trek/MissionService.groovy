@@ -5,7 +5,11 @@ import grails.transaction.Transactional
 @Transactional
 class MissionService {
 
-    def serviceMethod() {
-
+    def listPlots(String name) {
+		
+		Mission.all.findAll { Mission it ->
+			println it.missionExcerpt
+		}
+		
     }
 }
