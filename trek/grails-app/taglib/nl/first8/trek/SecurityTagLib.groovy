@@ -5,6 +5,7 @@ package nl.first8.trek
  */
 class SecurityTagLib {
 
+	//TODO7: tag libs are an easy way of easily reusing small snippets of html with behavior
 	static namespace = 'sec'
 
 	/** Dependency injection for securityService. */
@@ -20,6 +21,7 @@ class SecurityTagLib {
 			out << securityService.user.userName.encodeAsHTML()
 		}
 	}
+	
 	/**
 	 * Renders the body if the user is authenticated.
 	 */
@@ -34,6 +36,15 @@ class SecurityTagLib {
 	def ifNotLoggedIn = { attrs, body ->
 		if (!securityService.isLoggedIn()) {
 			out << body()
+		}
+	}
+	
+	/**
+	 * Renders link to a action on the UserController for the currently logged in user's page
+	 */
+	def createLinkToUserPage = { attrs, body ->
+		if (securityService.isLoggedIn()) {
+			out << g.link(controller: "user", action: attrs.action, id: securityService.user.id) { body() }
 		}
 	}
 }

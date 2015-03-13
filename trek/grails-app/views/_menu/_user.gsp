@@ -28,16 +28,16 @@
 		</a>
 		<ul class="dropdown-menu" role="menu">
 			<li class="">
-				<g:link controller="user" action="show">
+				<sec:createLinkToUserPage action="show">
 					<i class="glyphicon glyphicon-user"></i>
 					<g:message code="user.show.label"/>
-				</g:link>	
+				</sec:createLinkToUserPage>
 			</li>
 			<li class="">
-				<g:link controller="user" action="logout">
+				<sec:createLinkToUserPage action='edit'>
 					<i class="glyphicon glyphicon-edit"></i>
 					<g:message code="user.settings.change.label"/>
-				</g:link>
+				</sec:createLinkToUserPage>
 			</li>
 			
 			<li class="divider"></li>

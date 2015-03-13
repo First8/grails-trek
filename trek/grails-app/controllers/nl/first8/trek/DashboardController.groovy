@@ -5,6 +5,7 @@ class DashboardController {
 	/** Dependency injection for securityService. */
 	def securityService
 
+	// TODO3: When going to this method is called... 
     def index() {
 		
 		def loggedInPerson
@@ -20,6 +21,7 @@ class DashboardController {
 			}
 		}
 		
+		//TODO4: the method gathered some data, and delivers this as a map to the view...
 		["currentPerson" : loggedInPerson, "colleagues" : colleagues]
 	}
 	
