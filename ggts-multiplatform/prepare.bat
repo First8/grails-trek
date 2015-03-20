@@ -12,7 +12,7 @@ echo %GDIR%
 move /y grails.installs.update workspace\.metadata\.plugins\org.grails.ide.eclipse.core\grails.installs
 
 rem update work directory in JVM startup options in eclipse preferences
-set GRAILSWORK=org.grails.ide.eclipse.core.JVM_ARGS=-Dgrails.work.dir\=%TREKFWD%workspace/work -Dgrails.dependency.cache.dir\=%TREKFWD%workspace/dependencies
+set GRAILSWORK=org.grails.ide.eclipse.core.JVM_ARGS=-Dgrails.work.dir\=%TREKFWD%workspace/trek/target/work -Dgrails.dependency.cache.dir\=%TREKFWD%workspace/trek/dependencies
 echo WORK SETTINGS: %GRAILSWORK%
 set PREFS=%TREKFWD%workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.grails.ide.eclipse.core.prefs
 .\resources\sed-win32\bin\sed.exe -- "s|org.grails.ide.eclipse.core.JVM_ARGS.*$|%GRAILSWORK%|g" %PREFS% > org.grails.ide.eclipse.core.prefs.update
