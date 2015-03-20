@@ -21,7 +21,7 @@ class Mission {
 	}
 	
     static constraints = {
-		text nullable: true, maxSize: 5000
+		text nullable: true, maxSize: 20000
     }
 	
 	@Override
