@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<installs>
+<install is-default="true">
+<home>/home/bwijsmuller/Desktop/trek_distro/ggts-bundle-linux-x64/grails-2.4.4</home>
+<name>grails-2.4.4</name>
+</install>
+</installs>
