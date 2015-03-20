@@ -13,7 +13,11 @@ class Spaceship {
 	String mediaPath
 
     static constraints = {
-		name()
+		name(
+			validator: { 
+				(it != "Millennium Falcon" && it != "Star Destroyer") ?: 'spaceship.name.validator.wrong.universe.message'  
+			} 
+		)
 		registry()
 		spaceshipClass()
 		operatedBy()
