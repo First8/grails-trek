@@ -45,18 +45,10 @@ class BootStrap {
 			log.info("There is a user in the database with user name ${it.userName} and password ${it.password}")
 		}
 		
-		ThreadFactory factory = new CustomizableThreadFactory("missions-loader")
-		java.util.concurrent.Executors.newFixedThreadPool(1, factory).submit {
-			persistenceInterceptor.init()
-			try {
-				log.info "Loading missions in the background ..."
-				new ScrapedMissions().missions().each {
-					it.save()
-				}
-			} finally {
-				persistenceInterceptor.flush()
-				persistenceInterceptor.destroy()
-			}
+		log.info "Loading missions..."
+		new ScrapedMissions().missions().each {
+			it.save()
 		}
+		log.info "Done."
 	}
 }
