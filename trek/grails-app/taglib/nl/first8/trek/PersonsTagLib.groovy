@@ -73,7 +73,20 @@ class PersonsTagLib {
 			out << a.occupation.encodeAsHTML()
 			out << " on the "
 			out << createLinkToSpaceship(a.spaceship)
-			out << " ($a.yearFrom-" + (a.yearTo ?: "")+ ")"
+			/*
+				 <pre>
+				 		TODON How many times have you written something like this:
+				 		String foo = someObject.someLongFieldThatMightBeNull != null && !someObject.someLongFieldThatMightBeNull.equals(0) ? someObject.someLongFieldThatMightBeNull : ""
+				 		
+				 		Not any more with Groovy! 
+				 		
+				 		Can you fix the yearTo-part of the code below using both 
+				 		<a href='http://groovy.codehaus.org/Groovy+Truth'>Groovy Truth</a>
+				 		and the
+				 		<a href='http://groovy.codehaus.org/Operators#Operators-ElvisOperator(?:)'>Elvis Operator</a>?
+				 </pre>
+			*/
+			out << " ($a.yearFrom-" + (a.yearTo != null && !a.yearTo.equals(0) ? a.yearTo : "") + ")"
 		} else {
 			out << "-"
 		}
