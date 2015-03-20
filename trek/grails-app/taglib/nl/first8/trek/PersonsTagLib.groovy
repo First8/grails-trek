@@ -73,7 +73,7 @@ class PersonsTagLib {
 			out << a.occupation.encodeAsHTML()
 			out << " on the "
 			out << createLinkToSpaceship(a.spaceship)
-			/*
+			/**
 				 <pre>
 				 		TODON How many times have you written something like this:
 				 		String foo = someObject.someLongFieldThatMightBeNull != null && !someObject.someLongFieldThatMightBeNull.equals(0) ? someObject.someLongFieldThatMightBeNull : ""
