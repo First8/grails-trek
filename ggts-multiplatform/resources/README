@@ -1,0 +1,13 @@
+Wat nog ontbreekt hier:
+- jdk per platform (vooral bij windows een gedoe)
+- sed-win32
+
+
+De distros worden als volgt voorbereid:
+- de ggts versies, met grails, (laatste versies handig downloaden met update-ggts.sh) uitgepakken naar elk een folder
+- per platform uit de resources directory de jdk kopieren in de ggts folder
+- aanpassen default GGTS.ini files voor de verschillende platforms met als voorbeeld die uit de changedFiles folder (bij iedere release veranderen de jar versies).
+- de workspace is multiplatform en vereist geen voorbereiding, absolute paden etc. worden her en der met prepare.bat of prepare.sh script naderhand aangepast. Splash image staat in de changedFiles folder.
+- start create-distros.sh om zipfiles te maken voor ieder platform
+- start create-plan-b.sh om de bronbestanden ook apart te bundelen voor noodgevallen
+
