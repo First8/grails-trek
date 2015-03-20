@@ -30,3 +30,9 @@ body {
 .table > thead a {
 	color: #86B6E1;
 }
+
+//make our modals black too, with a white line. This was not done correctly in the lcars theme.
+.modal-content{
+	border: 1px solid rgba(255, 255, 255, 1.0) !important;
+	background-color: #000 !important;
+}
