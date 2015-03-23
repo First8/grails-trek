@@ -5,6 +5,9 @@ class Organization {
 	String name
 	
     static constraints = {
+		
+		
+		
     }
 	
 	String toString() { name }
