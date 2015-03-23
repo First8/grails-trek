@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.grails.ide.eclipse.core.COMMAND_TIMEOUT=180000
+org.grails.ide.eclipse.core.JVM_ARGS=-Dgrails.work.dir=/home/bwijsmuller/Desktop/trek_distro/workspace/work -Dgrails.dependency.cache.dir=/home/bwijsmuller/Desktop/trek_distro/workspace/dependencies
+org.grails.ide.eclipse.core.cleanOutput=false
+org.grails.ide.eclipse.core.launch.properties=

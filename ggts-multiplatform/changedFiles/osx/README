@@ -1,0 +1,5 @@
+After installing the Java JDK, you may or may not have to point eclipse to the JDK by adding the following to the ggts-3.6.3.SR1/GGTS.app/Contents/MacOS/GGTS.ini file (note the newline):
+-vm
+/<whatever path needs to go here>/bin
+
+ 
