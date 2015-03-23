@@ -69,15 +69,17 @@ class ${className}Controller {
         }
 		
         if (${propertyName}.hasErrors()) {
+			${propertyName}.discard()
             respond ${propertyName}.errors, view:'edit'
             return
         }
 		
 		if (!${propertyName}.validate()) {
+			${propertyName}.discard()
 			respond ${propertyName}.errors, view:'edit'
 			return
 		}
-
+		
         ${propertyName}.save flush:true
 
         request.withFormat {
