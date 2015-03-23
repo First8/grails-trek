@@ -16,6 +16,7 @@ class MissionService {
 		}
 		
 		return namedMissions.collect { Mission it ->
+			//see http://groovy.codehaus.org/Groovy+Beans on why missionExcerpt calls getMissionExcerpt()
 			it.missionExcerpt.excerpt
 		}
 		
