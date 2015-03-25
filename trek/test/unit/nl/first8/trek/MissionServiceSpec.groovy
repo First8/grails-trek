@@ -31,9 +31,13 @@ class MissionServiceSpec extends Specification {
 	def cleanup() {
 	}
 
-	//TODON you can use a String as test method name, as long as it starts with "test". Make the method name more readable.
-	//TODO you don't need to say assert, Spock knows you're going to assert stuff in the 'then'-block. Remove the asserts, and run the tests again
-	//TODO hmm, now you still have 2 tests that seem to work almost the same. That's not DRY! Can you combine them using Spock's Data Driven features? @see https://searchcode.com/codesearch/view/50544801/
+	/**
+	 * TODO15: - Run this test, for example by right clicking here, click "Run as...", "Grails Command (test-app)"
+	 *         - You can use a String as test method name, as long as it starts with "test". Make the method name more readable.
+	 *         - You don't need to say assert, Spock knows you're going to assert stuff in the 'then'-block. Remove the asserts, and run the tests again
+	 *         - Hmm, now you still have 2 tests that seem to work almost the same. That's not DRY! Can you combine them using Spock's Data Driven features? 
+	 *           @see https://searchcode.com/codesearch/view/50544801/
+	 */
 	void testListPlotsIsCaseSensitive() {
 		given: "some search string the user entered"
 		String input = 'Spock'

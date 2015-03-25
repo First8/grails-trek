@@ -75,8 +75,8 @@ class PersonsTagLib {
 			out << createLinkToSpaceship(a.spaceship)
 			/**
 				 <pre>
-				 		TODON How many times have you written something like this:
-				 		String foo = someObject.someLongFieldThatMightBeNull != null && !someObject.someLongFieldThatMightBeNull.equals(0) ? someObject.someLongFieldThatMightBeNull : ""
+				 		TODO13: How many times have you written something like this:
+				 		String foo = someObject.someIntegerFieldThatMightBeNull != null && !someObject.someIntegerFieldThatMightBeNull.equals(0) ? someObject.someIntegerFieldThatMightBeNull : ""
 				 		
 				 		Not any more with Groovy! 
 				 		
@@ -84,6 +84,8 @@ class PersonsTagLib {
 				 		<a href='http://groovy.codehaus.org/Groovy+Truth'>Groovy Truth</a>
 				 		and the
 				 		<a href='http://groovy.codehaus.org/Operators#Operators-ElvisOperator(?:)'>Elvis Operator</a>?
+				 		
+				 		In the end, you should not have the string 'yearTo' in your code more than once.
 				 </pre>
 			*/
 			out << " ($a.yearFrom-" + (a.yearTo != null && !a.yearTo.equals(0) ? a.yearTo : "") + ")"

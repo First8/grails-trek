@@ -5,7 +5,7 @@ class SpaceshipClassController {
     static scaffold = true
 	
 	/**
-	 * TODON: When a space ship class is created, often a new organization needs to go with it.
+	 * TODO16: When a space ship class is created, often a new organization needs to go with it.
 	 * Problem: Whenever a save fails (for instance, the name is not unique) the organization is still saved.
 	 * 
 	 * Since controller methods are not automatically transactional, we would like to handle

@@ -5,7 +5,10 @@ package nl.first8.trek
  */
 class SecurityTagLib {
 
-	//TODO7: tag libs are an easy way of easily reusing small snippets of html with behavior
+	/*
+	 * TODO08: tag libs are an easy way of easily reusing small snippets of html with behavior.
+	 * Take a look at what happens here, and how these methods are used in views/dashboard/index.gsp.
+	 */
 	static namespace = 'sec'
 
 	/** Dependency injection for securityService. */

@@ -5,7 +5,12 @@ class DashboardController {
 	/** Dependency injection for securityService. */
 	def securityService
 
-	// TODO3: When going to this method is called... 
+	/* TODO03: So, going to /trek/ means going to this controller method.
+	 *         "Controllers handle the code that links a user to the system. 
+	 *          It receives request or events from the user, prepare data and
+	 *          invoke proper business logic, and then return the view that 
+	 *          represents the result of user actions."
+	 */ 
     def index() {
 		
 		def loggedInPerson
@@ -21,7 +26,7 @@ class DashboardController {
 			}
 		}
 		
-		//TODO4: the method gathered some data, and delivers this as a map to the view...
+		//TODO04: This controller method gathered some data, and delivers this as a map to the view...
 		["currentPerson" : loggedInPerson, "colleagues" : colleagues]
 	}
 	

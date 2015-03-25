@@ -15,7 +15,7 @@ class Spaceship {
     static constraints = {
 		name(
 			validator: { 
-				(it != "Millennium Falcon" && it != "Star Destroyer") ?: 'spaceship.name.validator.wrong.universe.message'  
+				(it != "Millennium Falcon" && it != "Star Destroyer") ?: 'spaceship.name.validator.wrong.universe.message' //custom validator, see http://grails.github.io/grails-doc/2.4.4/ref/Constraints/validator.html
 			} 
 		)
 		registry()

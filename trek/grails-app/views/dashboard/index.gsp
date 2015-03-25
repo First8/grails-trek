@@ -22,16 +22,17 @@
 				
 			</sec:ifNotLoggedIn>
 			
-			<%--TODO6: you can also make your own tag libraries.
-			          See SecurityTagLib in taglib (to do nr 7). --%>
+			<%--TODO06: you can also make your own tag libraries.
+			          See SecurityTagLib in taglib (T0DO nr 8). --%>
 			<sec:ifLoggedIn>
 			
 				<div class="jumbotron">
-					<%-- TODO5: ...which can be used in the view.
-					     As you can see, this file is called index.gsp, the same as the action (index) in the controller.
+					<%-- TODO05: As you can see, this file is called index.gsp, the same as the action (index) in the controller.
 					     Also, this file is in the dashboard directory of the views directory, which links it to the DashboardController.
 					     
 					     This all is according to Grails' mantra: convention over configuration.
+					     
+					     Below, you can see some of the variables given to the view in the controller.
 					 --%>
 			        <h1>Hello, ${currentPerson.name}!</h1>
 			        <p>Welcome back ${currentPerson.rank} ${currentPerson.name}, ready to get to work!</p>
@@ -39,7 +40,7 @@
 			        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
 			        
 			        <h2>Collegues</h2>
-			        <%-- Normal HTML can be intertwined with Grails-specific tags, such as g:each.
+			        <%-- TODO07: Normal HTML can be intertwined with Grails-specific tags, such as g:each.
 			        	 See http://grails.github.io/grails-doc/2.4.x/ref/Tags/each.html for documentation.
 			        	 Other built-in tags are to the right of that page.
 			         --%>

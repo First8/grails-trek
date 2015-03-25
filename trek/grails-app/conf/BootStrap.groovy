@@ -4,12 +4,14 @@ import nl.first8.trek.*
 import nl.first8.trek.security.User
 import org.springframework.scheduling.concurrent.CustomizableThreadFactory
 
-//TODON  The init closure in the BootStrap class is run at application startup, and could be used to initialize or check some stuff.
-//       We use it to fill the in-memory database with some example data.
+//TODO12: The init closure in the BootStrap class is run at application startup, and could be used to initialize or check some stuff.
+//        We use it to fill the in-memory database with some example data.
 //
-//       Assignment: add an extra user for one of the Persons in the database. Try to use that immediately. 
-//       That should not work. Restart your application  (click the red stop button first).
-//       Now try to log in again with your new user. Should work.
+//        Assignment: add an extra user for one of the Persons in the database. 
+//		  Try to use that immediately, without restarting the application. 
+//        That should not work. Why not?
+//        Restart your application  (click the red stop button first).
+//        Now try to log in again with your new user. Should work.
 
 class BootStrap {
 	
@@ -23,10 +25,8 @@ class BootStrap {
 			loadDefaultContent()
 		}
     }
-    def destroy = {
-    }
-	
-	void loadDefaultContent() {
+    
+	def loadDefaultContent() {
 		
 		// load database content
 		
@@ -51,4 +51,8 @@ class BootStrap {
 		}
 		log.info "Done."
 	}
+	
+	def destroy = {
+	}
+	
 }

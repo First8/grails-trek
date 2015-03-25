@@ -14,8 +14,8 @@ class Assignment {
 	static belongsTo = Person
 
     static constraints = {
-		// parentheses needed to allow no-args constraint,
-		// explicit constraints determine ordering in scaffolded screens
+		// Explicit constraints determine ordering in scaffolded screens.
+		// Parentheses needed to allow no-args constraint.
 		who()
 		spaceship()
 		occupation blank: false
